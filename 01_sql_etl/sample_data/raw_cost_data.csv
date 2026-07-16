@@ -1,0 +1,9 @@
+service_no,inventory_category,total_revenue,source_system,extracted_discount,location_code,inserted_by,account_no
+123,BASE,100,SYSTEM_A,,L01,jdoe,A100
+123,ADJUSTMENT,-20,SYSTEM_A,,L01,jdoe,A100
+123,PROMOTIONS,-10,SYSTEM_A,,L01,jdoe,A100
+124,BASE,200,SYSTEM_B,,L02,asmith,A200
+124,PROMOTIONS,0,SYSTEM_B,-15,L02,asmith,A200
+125,BASE,150,SYSTEM_A,,L01,jdoe,A100
+125,SETTLEMENT,-5,SYSTEM_A,,L01,jdoe,A100
+126,SPECIAL PROMOTIONS,-8,SYSTEM_A,,L03,blee,A300

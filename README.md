@@ -1,85 +1,56 @@
 # Work Samples
 
-Welcome! This repository is a curated collection of projects that reflect how I think, build, and lead through data. Whether it's engineering automation, mentoring teammates, or analyzing key business metrics, my goal is always to deliver thoughtful, sustainable solutions.
+A small, honest portfolio of how I build with data: SQL and ETL, analytics
+automation, machine learning, technical mentorship, and platform migration. Every
+sample is stripped of company data, self-contained, and runs offline in a couple
+of minutes.
 
-These examples have been stripped of all company-specific data but are rooted in real business use cases. I hope they offer a clear picture of my technical mindset and approach. Feedback is always welcome — good or bad.
+The aim is not perfect code. It is to show how I think through a problem,
+structure a solution, and leave something a team can actually maintain.
 
-📧 zachburke23@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/zachary-burke-405135153/)  
-📱 352-874-4784  
+Contact: zachburke23@gmail.com | [LinkedIn](https://www.linkedin.com/in/zachary-burke-405135153/)
 
----
+## What each project shows
 
-## 🔍 Repository Overview
+| Area | Project | What it demonstrates |
+|------|---------|----------------------|
+| SQL and ETL | [`01_sql_etl`](01_sql_etl) | Multi-source transformation, cross-system reconciliation, window functions, runnable against SQLite fixtures |
+| Analytics automation | [`02_analytics_automation`](02_analytics_automation) | Rolling-average anomaly detection, a CLI, logging, and email alerting with credentials kept out of source |
+| Machine learning | [`03_ml_forecasting`](03_ml_forecasting) | A reproducible booking forecast with time-ordered evaluation, cross-validation, and a saved chart |
+| Mentorship | [`04_mentorship`](04_mentorship) | A reusable, tested data-quality toolkit and graded onboarding exercises |
+| Platform migration | [`05_platform_migration`](05_platform_migration) | A generalized case study: moving pipelines off a visual ETL tool to owned SQL, behind a parity gate |
 
-```
-Work_Samples/
-├── SQL_ETL/                # Enterprise SQL ETL solutions
-├── Python_Projects/        # Analytics Engineering projects
-│   ├── automated_reporting.py
-│   ├── historical_booking_predictions.py
-│   ├── mentorship_training.py
-│   ├── automated_email_alerts.py
-│   └── requirements.txt
-└── Other_Work_Samples/     # Additional project examples
-```
+## A sample result
 
----
+The forecasting project trains on the past and scores on the most recent days it
+has never seen (held-out R-squared of 0.65):
 
-## 💡 Project Focus Areas
+![Daily bookings: actual vs predicted](03_ml_forecasting/outputs/forecast_vs_actual.png)
 
-### 1. SQL ETL
-End-to-end solutions demonstrating:
-- Advanced SQL transformation logic
-- Multi-source data consolidation
-- Alteryx workflow automation
-- Clean handoff between SQL and reporting layers
-
-### 2. Python Analytics Engineering
-Real-world examples of:
-- Automated reporting with anomaly detection
-- Machine learning for demand forecasting
-- Scalable email alerting systems
-- Mentorship tools for growing analysts
-
-Each script is designed to be easily understandable, modular, and reproducible.
-
----
-
-## ⚙️ How to Run
+## Run the samples
 
 ```bash
-cd Python_Projects
+# Python projects
 pip install -r requirements.txt
 
-# Run any sample
-python automated_reporting.py
+python 01_sql_etl/run_samples.py               # SQL against local fixtures, no database needed
+python 02_analytics_automation/anomaly_monitor.py
+python 03_ml_forecasting/booking_forecast.py    # writes the chart above
+python 04_mentorship/data_quality.py
 ```
 
-Some scripts expect mock CSVs or dummy database connections for illustration purposes.
+To run the tests and linter as CI does:
 
-## 🔦 Highlights
+```bash
+pip install -r requirements-dev.txt
+ruff check .
+pytest -q
+```
 
-### 📊 `automated_reporting.py`
-- Automates metric tracking with rolling averages and deviation analysis.
-- Useful for detecting anomalies across business KPIs.
+## How this repo is built
 
-### 📈 `historical_booking_predictions.py`
-- Trains a simple ML model to forecast bookings using historical data.
-- Includes feature engineering and model evaluation with `scikit-learn`.
-
-### 🤝 `mentorship_training.py`
-- Contains examples and exercises used in mentoring junior analysts.
-- Covers SQL/data validation patterns and clean coding habits.
-
-### 📬 `automated_email_alerts.py`
-- Sends formatted emails based on detected anomalies.
-- Designed for flexible integration with other scripts.
-
----
-
-## 🎯 Purpose
-
-This repository isn’t about perfect code—it’s about showing how I approach problems, communicate structure, and support a data-driven team environment. It reflects a balance of hands-on skill and leadership potential.
-
-If you’re reviewing this, thanks for taking the time. Feel free to reach out with questions, feedback, or conversation.
+Each project is a folder with its own README, sample data, and (where it applies)
+tests. The Python samples share one `requirements.txt`, a `pytest` suite, and a CI
+workflow that lints, tests, and smoke-runs every sample on each push. The point of
+that scaffolding is the same as the point of the code: reproducible, reviewable
+work that the next person can pick up.
