@@ -9,7 +9,11 @@ A full overhaul focused on correctness, structure, and reproducibility.
 
 ### Added
 - Competency-based structure: `01_sql_etl`, `02_analytics_automation`,
-  `03_ml_forecasting`, `04_mentorship`, `05_platform_migration`.
+  `03_ml_forecasting`, `04_mentorship`, `05_platform_migration`,
+  `06_agentic_engineering`.
+- The centerpiece piece on agentic engineering and institutional intelligence:
+  six pillars, an architecture diagram, and generic examples of the machinery
+  (a skill definition, a guardrail hook, a memory note template).
 - Runnable sample data for every project, so each sample works offline with no
   database or credentials.
 - A window-function SQL query with a SQLite harness that runs it against fixtures.

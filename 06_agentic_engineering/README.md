@@ -1,0 +1,96 @@
+# Agentic Engineering: Building Institutional Intelligence
+
+I build institutional intelligence: a governed workspace where human judgment
+and AI agents compound into a shared memory, a rulebook, and a capability that
+persist for years, no matter which model sits inside it.
+
+This piece describes that discipline. Everything here is generalized from a
+system I designed, built, and operate daily in a production analytics
+environment; no company-specific detail appears anywhere in it. The other
+projects in this portfolio (01 through 05) are the kind of work the system
+produces. This one is about the system itself.
+
+## The ladder
+
+The story has four levels, and each answers a different question:
+
+1. **Institutional intelligence** is what gets built: an institution, not a
+   tool. Memory that outlives sessions and people. Rules that govern how work
+   is allowed to happen. Verification that makes answers trustworthy. Teaching
+   that onboards newcomers, human or agent. The models inside it are capable
+   and replaceable; the institution is the asset that compounds.
+2. **Agentic engineering** is how it gets built: the craft of designing the
+   agents, the memory, the guardrails, and the verification loops as one
+   governed system, rather than bolting an AI assistant onto existing work.
+3. **Agentic analytics** is where I practice it today: an analytics workspace
+   over a large production database. The discipline is domain-agnostic; the
+   same design would run a finance or operations shop without changing shape.
+4. **The six pillars** are why it can be trusted. Each is a short read in
+   [`pillars/`](pillars):
+
+| Pillar | The rule |
+|--------|----------|
+| [Orchestration and adversarial verification](pillars/01_orchestration_and_adversarial_verification.md) | Findings are claims until an independent pass has tried to kill them |
+| [Institutional memory](pillars/02_institutional_memory.md) | One fact, one home, at the velocity it changes |
+| [Calibrated answers](pillars/03_calibrated_answers.md) | The confidence label comes before the answer |
+| [Guardrails as code](pillars/04_guardrails_as_code.md) | A lesson is not learned until something that cannot forget enforces it |
+| [Governance philosophy](pillars/05_governance_philosophy.md) | Understanding earns change rights; no change is ever silent |
+| [Self-auditing](pillars/06_self_auditing.md) | The system measures what it knows against what it believes it knows |
+
+The system view of how the pieces fit, with a diagram, is in
+[`architecture.md`](architecture.md). Small generic artifacts showing the shape
+of the machinery (a skill definition, a guardrail hook, a memory note) are in
+[`examples/`](examples).
+
+## The lineage, honestly
+
+None of the raw ingredients are mine, and saying so matters, because the
+discipline itself demands sourced claims. The memory architecture builds
+deliberately on the emerging LLM-wiki pattern that Andrej Karpathy sketched
+publicly (a curated index, hub notes, ingest and lint operations) and on
+published arguments for typed links over bare ones. The governance philosophy
+rests on Chesterton's fence, verified against the 1929 primary text rather than
+the internet paraphrase, with Bostrom and Ord's Reversal Test as its formal
+counterweight against status-quo bias. The self-auditing instruments translate
+the cognitive-psychology literature on metamemory (monitoring, control,
+calibration) into engineering checks. Parity gates, pre-registration, and
+expectation-first testing are old ideas from migration practice and science.
+
+What I claim is the weave. When we adversarially benchmarked the calibration
+design against the 2026 field, the honest summary was that it assembles
+published pieces into a combination no mainstream system ships together:
+label-before-answer, fingerprint-triggered staleness demotion, and a
+miss-to-verified flywheel, running as one discipline. The research frontier is
+only now naming things this workspace already operates. Weaving existing
+fundamentals into a working institution, and being able to prove where every
+thread came from, is the craft I am demonstrating.
+
+## The stubbornness
+
+Two habits hold the whole thing together, and they pull in opposite
+directions on purpose.
+
+The first is relentless questioning. Every convention, including the golden
+ones, stays permanently open: does this logic make sense, and does it still
+make sense? Standards here are templates, not ceilings; the moment a problem
+wants a different shape, the shape wins, and the standard itself is expected to
+keep improving, because perfection is maintained by improving it.
+
+The second is refusal to change what is not yet understood. Anything
+inherited, anything unowned, anything unproven gets parity by default: preserve
+the behavior exactly, then earn the right to change it by verifying your
+understanding against live evidence. Weird-looking things are load-bearing more
+often than they are mistakes.
+
+Held together, these two habits produce a system that questions everything and
+breaks nothing silently. That tension is not a compromise. It is the design.
+
+## Why this transfers
+
+Nothing in the design depends on the current model, the current vendor stack,
+or the analytics domain. The law is version-controlled text. The memory is
+structure plus provenance. The verification is procedure. Swap any component,
+including me, and the institution keeps its knowledge, its standards, and its
+calibration. If your team already has AI tools and still loses knowledge every
+time someone leaves, this discipline is the missing layer, and it can be built
+around whatever stack you already run.
