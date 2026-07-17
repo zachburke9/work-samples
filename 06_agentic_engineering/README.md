@@ -7,9 +7,9 @@ rulebook, and a capability that persist across sessions, people, and models.
 I want to be careful about the claim. I did not invent the ingredients, and
 this is not a product I set up once and walked away from. It is a practice I
 work at daily, and it is a way of thinking before it is any particular system:
-divergent and combinatorial, always asking what existing ideas want to be woven
-together next, and always asking whether the logic that held yesterday still
-holds today.
+divergent and combinatorial, always asking which existing ideas belong together
+next, and always asking whether the logic that held yesterday still holds
+today.
 
 This piece describes that practice. Everything here is generalized from a
 system I designed, built, and operate daily in a production analytics
@@ -51,8 +51,8 @@ of the machinery (a skill definition, a guardrail hook, a memory note) are in
 
 ## The lineage, honestly
 
-The threads here are borrowed and credited; the weave is mine. Crediting
-matters, because the discipline itself demands sourced claims. The memory
+The materials here are borrowed and credited; the architecture is mine.
+Crediting matters, because the discipline itself demands sourced claims. The memory
 architecture builds
 deliberately on the emerging LLM-wiki pattern that Andrej Karpathy sketched
 publicly (a curated index, hub notes, ingest and lint operations) and on
@@ -64,15 +64,14 @@ the cognitive-psychology literature on metamemory (monitoring, control,
 calibration) into engineering checks. Parity gates, pre-registration, and
 expectation-first testing are old ideas from migration practice and science.
 
-And the weave holds up under scrutiny. When we adversarially benchmarked the
-calibration design against the 2026 field, the honest summary was that it
-assembles
-published pieces into a combination no mainstream system ships together:
-label-before-answer, fingerprint-triggered staleness demotion, and a
+And the synthesis holds up under scrutiny. When we adversarially benchmarked
+the calibration design against the 2026 field, the honest summary was that it
+assembles published pieces into a combination no mainstream system ships
+together: label-before-answer, fingerprint-triggered staleness demotion, and a
 miss-to-verified flywheel, running as one discipline. The research frontier is
-only now naming things this workspace already operates. Weaving existing
-fundamentals into a working institution, and being able to prove where every
-thread came from, is the craft I am demonstrating.
+only now naming things this workspace already operates. Synthesizing proven
+fundamentals into a working institution, and being able to show where every
+piece came from, is the craft I am demonstrating.
 
 ## The stubbornness
 
