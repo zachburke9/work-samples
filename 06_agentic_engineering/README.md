@@ -1,14 +1,21 @@
 # Agentic Engineering: Building Institutional Intelligence
 
-I build institutional intelligence: a governed workspace where human judgment
-and AI agents compound into a shared memory, a rulebook, and a capability that
-persist for years, no matter which model sits inside it.
+Institutional intelligence is the idea this portfolio orbits: a governed
+workspace where human judgment and AI agents compound into a shared memory, a
+rulebook, and a capability that persist across sessions, people, and models.
 
-This piece describes that discipline. Everything here is generalized from a
+I want to be careful about the claim. I did not invent the ingredients, and
+this is not a product I set up once and walked away from. It is a practice I
+work at daily, and it is a way of thinking before it is any particular system:
+divergent and combinatorial, always asking what existing ideas want to be woven
+together next, and always asking whether the logic that held yesterday still
+holds today.
+
+This piece describes that practice. Everything here is generalized from a
 system I designed, built, and operate daily in a production analytics
 environment; no company-specific detail appears anywhere in it. The other
-projects in this portfolio (01 through 05) are the kind of work the system
-produces. This one is about the system itself.
+projects in this portfolio (01 through 05) are the kind of work the practice
+produces. This one is about the practice itself.
 
 ## The ladder
 
@@ -85,12 +92,42 @@ often than they are mistakes.
 Held together, these two habits produce a system that questions everything and
 breaks nothing silently. That tension is not a compromise. It is the design.
 
+## The craft in the loop
+
+A fair reading of everything above might be: build it once and it runs itself.
+The opposite is true. The artifacts are the residue of the practice, not the
+practice itself. What makes the system compound is the daily craft of working
+with it: how a problem is framed for an agent, how a new source is interrogated
+before it earns a place in memory, how a verification is designed so it can
+actually fail, when a standard gets sharpened and when it gets left alone.
+Prompting, agent design, memory curation, and knowledge engineering are living
+skills, and they develop the way any engineering skill does: through practice,
+feedback, and taste.
+
+That is also the intent behind publishing this. The pattern exists to make
+every workspace and every analyst stronger, not to make any of them
+unnecessary. The institution amplifies its practitioners. It does not replace
+them, and it was never designed to.
+
+## Where this is heading
+
+The practice is young and the backlog of ideas is long. The directions that
+pull hardest right now: dedicated agents for the workflows every team quietly
+repeats by hand; agents whose whole job is helping an organization build and
+curate its own knowledge base; department-level curation that turns scattered
+tribal knowledge into an owned, verified asset; integrations that bring the
+institution into the internal applications people already work in, instead of
+asking them to come to it; and onboarding paths that let any employee draw on
+it without needing to be its architect. Each of these is the same discipline
+pointed at a new surface, and the list grows faster than it shrinks.
+
 ## Why this transfers
 
 Nothing in the design depends on the current model, the current vendor stack,
 or the analytics domain. The law is version-controlled text. The memory is
-structure plus provenance. The verification is procedure. Swap any component,
-including me, and the institution keeps its knowledge, its standards, and its
-calibration. If your team already has AI tools and still loses knowledge every
-time someone leaves, this discipline is the missing layer, and it can be built
-around whatever stack you already run.
+structure plus provenance. The verification is procedure. Swap the engine and
+the institution keeps its knowledge, its standards, and its calibration; pair
+it with people who work the craft, and it keeps compounding. If your team
+already has AI tools and still loses knowledge every time someone leaves, this
+discipline is the missing layer, and it can be built around whatever stack you
+already run.
