@@ -51,8 +51,9 @@ of the machinery (a skill definition, a guardrail hook, a memory note) are in
 
 ## The lineage, honestly
 
-None of the raw ingredients are mine, and saying so matters, because the
-discipline itself demands sourced claims. The memory architecture builds
+The threads here are borrowed and credited; the weave is mine. Crediting
+matters, because the discipline itself demands sourced claims. The memory
+architecture builds
 deliberately on the emerging LLM-wiki pattern that Andrej Karpathy sketched
 publicly (a curated index, hub notes, ingest and lint operations) and on
 published arguments for typed links over bare ones. The governance philosophy
@@ -63,8 +64,9 @@ the cognitive-psychology literature on metamemory (monitoring, control,
 calibration) into engineering checks. Parity gates, pre-registration, and
 expectation-first testing are old ideas from migration practice and science.
 
-What I claim is the weave. When we adversarially benchmarked the calibration
-design against the 2026 field, the honest summary was that it assembles
+And the weave holds up under scrutiny. When we adversarially benchmarked the
+calibration design against the 2026 field, the honest summary was that it
+assembles
 published pieces into a combination no mainstream system ships together:
 label-before-answer, fingerprint-triggered staleness demotion, and a
 miss-to-verified flywheel, running as one discipline. The research frontier is
@@ -130,4 +132,5 @@ the institution keeps its knowledge, its standards, and its calibration; pair
 it with people who work the craft, and it keeps compounding. If your team
 already has AI tools and still loses knowledge every time someone leaves, this
 discipline is the missing layer, and it can be built around whatever stack you
-already run.
+already run. The pattern is open-ended by design: take it, make it your own,
+and improve it. It gets better every time someone does.
