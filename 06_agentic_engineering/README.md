@@ -122,6 +122,16 @@ asking them to come to it; and onboarding paths that let any employee draw on
 it without needing to be its architect. Each of these is the same discipline
 pointed at a new surface, and the list grows faster than it shrinks.
 
+One direction is further along than the rest, and it is the planned sequel to
+this piece: turning the institution itself into a product. The working shape is
+a knowledge application where anyone on a team can ask a plain-English question
+and get an answer that leads with its confidence label, cites its sources, and
+files its own gap ticket when it cannot answer honestly. Every miss that gets
+worked grows the verified set, so the application becomes more trustworthy the
+longer a team uses it. It is the calibrated-answers pillar grown into a front
+door for the whole institution. When it is ready to show, it will appear in
+this portfolio as its own project.
+
 ## Why this transfers
 
 Nothing in the design depends on the current model, the current vendor stack,
