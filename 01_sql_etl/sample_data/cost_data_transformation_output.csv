@@ -1,0 +1,7 @@
+service_no,inventory_category,total_revenue,source_system,extracted_discount,location_code,inserted_by,account_no,gross_cost,net_cost,cost_adjustments,cost_discounts,discount_inventory_category,service_location_name,full_name,team_name,consolidated_inventory_category,home_location_name
+123,BASE,100,SYSTEM_A,,L01,jdoe,A100,100,100,0,0,,North Center,Jane Doe,Revenue Ops,BASE,West Center
+123,ADJUSTMENT,-20,SYSTEM_A,,L01,jdoe,A100,0,-20,-20,0,,North Center,Jane Doe,Revenue Ops,ADJUSTMENT,West Center
+123,PROMOTIONS,-10,SYSTEM_A,,L01,jdoe,A100,0,-10,0,-10,DISCOUNT,North Center,Jane Doe,Revenue Ops,DISCOUNT,West Center
+124,BASE,200,SYSTEM_B,,L02,asmith,A200,200,200,0,0,,West Center,Alan Smith,Revenue Ops,BASE,North Center
+124,PROMOTIONS,0,SYSTEM_B,-15,L02,asmith,A200,0,0,0,-15,DISCOUNT,West Center,Alan Smith,Revenue Ops,DISCOUNT,North Center
+125,BASE,150,SYSTEM_A,,L01,jdoe,A100,150,150,0,0,,North Center,Jane Doe,Revenue Ops,BASE,West Center
