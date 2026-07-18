@@ -95,7 +95,7 @@ read the result with no legend.
 
 **Solution.** There is no single right answer, but the habit is: name a column
 for the state the reader cares about, not the database encoding. `flg_actv_1`
-becomes `is_active`. `res_typ = 'C'` surfaced as a column becomes `status` with
+becomes `is_active`. `stat_cd = 'C'` surfaced as a column becomes `status` with
 values like `Confirmed`. The reader should never need a decoder.
 
 The lesson: the last mile of an analysis is making it legible. Clear names are

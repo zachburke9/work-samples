@@ -31,6 +31,9 @@ cross-validation. On the held-out period:
 | R-squared | 0.654 |
 | Time-series CV MAE | 5.76 bookings |
 
+The run is seeded, so these figures are deterministic for a given environment;
+expect small drift across scikit-learn or numpy versions.
+
 ![Daily bookings: actual vs predicted](outputs/forecast_vs_actual.png)
 
 The predictions track the weekly rhythm and promotion spikes. The model

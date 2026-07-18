@@ -17,8 +17,8 @@ file="$1"
 fail=0
 
 # Known column-name traps (misspellings that parse but return wrong data).
-if grep -qiE '\bRES_ADULTS\b' "$file"; then
-  echo "TRAP: column is RES_ADULT (singular), not RES_ADULTS" >&2
+if grep -qiE '\bGUEST_COUNTS\b' "$file"; then
+  echo "TRAP: column is GUEST_COUNT (singular), not GUEST_COUNTS" >&2
   fail=1
 fi
 
@@ -29,9 +29,9 @@ if grep -qiE "(=|<>)\s*''" "$file"; then
 fi
 
 # A composite key joined on only half its columns returns duplicates.
-if grep -qiE 'JOIN\s+origin_lookup\b' "$file" && \
-   ! grep -qiE 'origin_cd' "$file"; then
-  echo "TRAP: origin_lookup requires the composite key (source + origin)" >&2
+if grep -qiE 'JOIN\s+channel_lookup\b' "$file" && \
+   ! grep -qiE 'subchannel_cd' "$file"; then
+  echo "TRAP: channel_lookup requires the composite key (channel + subchannel)" >&2
   fail=1
 fi
 

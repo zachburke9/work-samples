@@ -3,7 +3,7 @@
 All notable changes to this portfolio are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/).
 
-## [2.0.0] - 2025
+## [2.0.0] - 2026-07-17
 
 A full overhaul focused on correctness, structure, and reproducibility.
 
