@@ -32,9 +32,10 @@ before it counts:
   independent judges, then synthesize from the winner while grafting the best
   ideas from the runners-up. One attempt iterated three times explores less
   than three attempts judged once.
-- **The parity gate on anything that replaces anything.** When new logic
-  replaces old logic, old and new run side by side and the outputs are diffed
-  row by row. The new version ships when the diff is empty or every difference
+- **The parity gate on anything that replaces anything.** The plain version:
+  a replacement must produce the same answers as the thing it replaces, and it
+  does not ship until it does. When new logic replaces old logic, old and new
+  run side by side and the outputs are diffed row by row. The new version ships when the diff is empty or every difference
   is explained and signed off. Intended improvements ship separately, after,
   visibly. This single discipline is what makes large migrations safe.
 - **Review works to zero.** On changes that matter, automated review findings

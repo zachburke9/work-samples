@@ -65,7 +65,8 @@ mood. See `examples/example_skill.md` and `examples/example_hook.md`.
 search, review, and lineage-hunting; verifier agents exist to say no. The
 important design choice is adversarial: a finding does not count until an
 independent pass has tried to refute it, and a change to anything inherited does
-not ship until it proves parity with the behavior it replaces.
+not ship until it proves parity with the behavior it replaces (same inputs,
+same answers, before it takes over).
 
 **The memory.** Two tiers: a personal source-of-truth tier with full detail, and
 a curated shared mirror published deliberately through a manifest (share the

@@ -31,7 +31,7 @@ produces; project 06 is the system itself.
 | Analytics automation | [`02_analytics_automation`](02_analytics_automation) | Rolling-average anomaly detection, a CLI, logging, and email alerting with credentials kept out of source |
 | Machine learning | [`03_ml_forecasting`](03_ml_forecasting) | A reproducible booking forecast with time-ordered evaluation, cross-validation, and a saved chart |
 | Mentorship | [`04_mentorship`](04_mentorship) | A reusable, tested data-quality toolkit and graded onboarding exercises |
-| Platform migration | [`05_platform_migration`](05_platform_migration) | A generalized case study: moving pipelines off a visual ETL tool to owned SQL, behind a parity gate |
+| Platform migration | [`05_platform_migration`](05_platform_migration) | A generalized case study: moving pipelines off a visual ETL tool to owned SQL, proving the new version matches the old before switching (a parity gate) |
 
 ## A sample result
 

@@ -27,8 +27,10 @@ diff is empty or every remaining difference is explained and approved.
 
 ## The parity gate, concretely
 
-Parity is a row-level comparison of the new SQL output against the current system
-of record, run before cutover and again on the first live cycle.
+The plain version first: the new system must produce the same answers as the
+old one, and nothing ships until it does. Concretely, that means a row-level
+comparison of the new SQL output against the current system of record, run
+before cutover and again on the first live cycle.
 
 1. Materialize the legacy output and the new output for the same window.
 2. Compare on the natural key. Report three buckets: rows only in legacy, rows

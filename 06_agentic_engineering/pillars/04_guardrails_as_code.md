@@ -18,8 +18,9 @@ Enforcement depth is the organizing idea: prose asks nicely, gates hold. Rules
 that can be checked objectively get pushed down the stack until they are
 mechanical.
 
-- **Deterministic hooks at the moment of action.** Small scripts fire
-  automatically at fixed points: on every SQL save (known column traps,
+- **Deterministic hooks at the moment of action.** A hook is a script the
+  environment runs by itself at a fixed point, so the check happens without
+  anyone needing to remember it. They fire on every SQL save (known column traps,
   null-comparison mistakes, composite-key misuse), before a query touches an
   unprofiled table (a reminder that this is unmapped territory), before any
   write that could leak something that should not be shared. They are fast,

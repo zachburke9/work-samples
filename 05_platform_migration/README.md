@@ -26,7 +26,9 @@ That tool did its job for years. Over time the cost of staying on it grew:
 
 I did not attempt a big-bang rewrite. The strategy was to **own each pipeline as
 SQL, one at a time, behind a parity gate**, so nothing changed for the consumer
-until the new version was proven equal to the old one.
+until the new version was proven equal to the old one. A parity gate is a plain
+idea with a technical name: the new version must produce the same answers as
+the old one (parity), and nothing ships until it does (the gate).
 
 1. **Reverse-engineer before rewriting.** Extract every input query and the
    transformation logic from each workflow, and write down what it actually does

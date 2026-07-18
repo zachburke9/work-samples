@@ -1,9 +1,9 @@
 # Example Artifact: A Guardrail Hook
 
-A hook is a deterministic script the environment runs automatically at a fixed
-point in the workflow (on save, before a query executes, before a commit). It is
-the difference between "we try to remember to check" and "the check cannot be
-skipped." Hooks carry the objective, near-zero-false-positive checks; judgment
+The difference between "we try to remember to check" and "the check cannot be
+skipped" is a hook: a deterministic script the environment runs automatically
+at a fixed point in the workflow (on save, before a query executes, before a
+commit). Hooks carry the objective, near-zero-false-positive checks; judgment
 stays with the humans and agents. This example is generic and reconstructed for
 illustration.
 
