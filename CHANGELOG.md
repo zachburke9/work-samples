@@ -3,6 +3,13 @@
 All notable changes to this portfolio are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.1.0] - 2026-07-18
+
+### Added
+- A model-comparison benchmark in `03_ml_forecasting`: a seasonal-naive baseline
+  vs linear regression, random forest, and gradient boosting on the same
+  time-ordered split, with an MAE/RMSE/R-squared table and chart (part of issue #4).
+
 ## [2.0.0] - 2026-07-17
 
 A full overhaul focused on correctness, structure, and reproducibility.
