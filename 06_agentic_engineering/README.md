@@ -24,15 +24,19 @@ The story has four levels, and each answers a different question:
 1. **Institutional intelligence** is what gets built: an institution, not a
    tool. Memory that outlives sessions and people. Rules that govern how work
    is allowed to happen. Verification that makes answers trustworthy. Teaching
-   that onboards newcomers, human or agent. The models inside it are capable
-   and replaceable; the institution is the asset that compounds.
-2. **Agentic engineering** is how it gets built: the craft of designing the
+   that onboards newcomers, human or agent. A shared vocabulary that maps
+   scattered data to the business concepts behind it, so people and agents
+   reason from one set of definitions instead of raw keywords. The models
+   inside it are capable and replaceable; the institution is the asset that
+   compounds.The models inside it are capable and replaceable; the institution
+   is the asset that compounds.
+3. **Agentic engineering** is how it gets built: the craft of designing the
    agents, the memory, the guardrails, and the verification loops as one
    governed system, rather than bolting an AI assistant onto existing work.
-3. **Agentic analytics** is where I practice it today: an analytics workspace
+4. **Agentic analytics** is where I practice it today: an analytics workspace
    over a large production database. The discipline is domain-agnostic; the
    same design would run a finance or operations shop without changing shape.
-4. **The six pillars** are why it can be trusted. Each is a short read in
+5. **The six pillars** are why it can be trusted. Each is a short read in
    [`pillars/`](pillars):
 
 | Pillar | The rule |
