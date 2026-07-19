@@ -3,6 +3,18 @@
 All notable changes to this portfolio are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.1.0] - 2026-07-18
+
+### Added
+- A model-comparison benchmark in `03_ml_forecasting`: a seasonal-naive baseline
+  vs linear regression, random forest, and gradient boosting on the same
+  time-ordered split, with an MAE/RMSE/R-squared table and chart (part of issue #4).
+- `04_mentorship/mentoring_approach.md`: the mentoring philosophy behind the
+  exercises, seven tool-independent habits, each with the moment where it shows up.
+
+### Fixed
+- The repo README's LinkedIn link now uses the zjburke vanity URL.
+
 ## [2.0.0] - 2026-07-17
 
 A full overhaul focused on correctness, structure, and reproducibility.

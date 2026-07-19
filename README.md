@@ -11,7 +11,7 @@ couple of minutes. The aim is not perfect code. It is to show how I think
 through a problem, structure a solution, and leave something a team can
 actually maintain.
 
-Contact: zachburke23@gmail.com | [LinkedIn](https://www.linkedin.com/in/zachary-burke-405135153/)
+Contact: zachburke23@gmail.com | [LinkedIn](https://www.linkedin.com/in/zjburke)
 
 ## The centerpiece
 

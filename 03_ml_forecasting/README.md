@@ -9,8 +9,10 @@ time order.
 
 - `booking_forecast.py` builds the data, engineers features, trains the model, and
   writes the chart. Everything is seeded, so the run is reproducible offline.
-- `outputs/forecast_vs_actual.png` is the chart the script produces.
-- `tests/` covers the feature engineering and reproducibility.
+- `model_comparison.py` benchmarks a seasonal-naive baseline against three models
+  on the same split, to show a model has to earn its complexity.
+- `outputs/` holds the two charts the scripts produce.
+- `tests/` covers the feature engineering, reproducibility, and the benchmark.
 
 ## Run it
 
@@ -41,6 +43,30 @@ under-shoots the very highest peaks, which is expected: a random forest cannot
 predict above the range it was trained on. Feature importances line up with how
 the data was built, with day-of-week seasonality and the promotion flag carrying
 most of the signal.
+
+## Does the model earn its complexity?
+
+A single accuracy number means little without a baseline. `model_comparison.py`
+scores a seasonal-naive baseline (predict last week's same-day value) against
+three models on the identical time-ordered split:
+
+```bash
+python model_comparison.py
+```
+
+| Model | MAE | RMSE | R-squared |
+|-------|-----|------|-----------|
+| Seasonal naive | 11.14 | 15.51 | 0.152 |
+| Linear regression | 10.59 | 12.93 | 0.411 |
+| Random forest | 8.13 | 9.92 | 0.654 |
+| Gradient boosting | 8.52 | 10.38 | 0.621 |
+
+![Model comparison](outputs/model_comparison.png)
+
+The random forest cuts the baseline's error by roughly a quarter, which is the
+justification for using it. If it had merely tied the naive predictor, the honest
+conclusion would be to ship the one-line baseline instead. Reporting the baseline
+is not a formality; it is what tells you whether the modeling was worth doing.
 
 ## Why the evaluation is set up this way
 

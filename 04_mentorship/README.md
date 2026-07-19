@@ -6,6 +6,9 @@ volume.
 
 ## Contents
 
+- `mentoring_approach.md` is the philosophy: how I actually mentor, the habits I
+  coach, and the moment where each one comes up. Tool-independent, and the human
+  layer behind the exercises.
 - `data_quality.py` is a reusable, tested toolkit of the checks every dataset
   should pass before it reaches a report: missing values, duplicate identifiers,
   and out-of-range numbers. Each check returns the offending rows rather than

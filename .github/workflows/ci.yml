@@ -31,4 +31,5 @@ jobs:
           python 01_sql_etl/run_samples.py
           python 02_analytics_automation/anomaly_monitor.py
           python 03_ml_forecasting/booking_forecast.py
+          python 03_ml_forecasting/model_comparison.py
           python 04_mentorship/data_quality.py
