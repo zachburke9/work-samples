@@ -12,6 +12,9 @@ All notable changes to this portfolio are recorded here. Format loosely follows
 - `04_mentorship/mentoring_approach.md`: the mentoring philosophy behind the
   exercises, seven tool-independent habits, each with the moment where it shows up.
 
+### Fixed
+- The repo README's LinkedIn link now uses the zjburke vanity URL.
+
 ## [2.0.0] - 2026-07-17
 
 A full overhaul focused on correctness, structure, and reproducibility.
