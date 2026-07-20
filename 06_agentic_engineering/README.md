@@ -28,10 +28,10 @@ produces. This one is about the practice itself.
 The story has four levels, and each answers a different question:
 
 1. **Institutional intelligence** is what gets built: an institution, not a
-   tool. Memory that outlives sessions and people. Rules that govern how work
-   is allowed to happen. Verification that makes answers trustworthy. Teaching
-   that onboards newcomers, human or agent. The models inside it are capable
-   and replaceable; the institution is the asset that compounds.
+   tool. Memory that outlives sessions and people. Rules the work holds
+   itself to. Verification that makes answers trustworthy. Teaching that
+   onboards newcomers, human or agent. The models inside it are capable and
+   replaceable; the institution is the asset that compounds.
 2. **Agentic engineering** is how it gets built: the craft of designing the
    agents, the memory, the guardrails, and the verification loops as one
    governed system, rather than bolting an AI assistant onto existing work.
