@@ -4,7 +4,8 @@ Analytics engineering with SQL, Python, and machine learning, and the practice
 I keep building around all of it: institutional intelligence, a governed
 workspace where human judgment and AI agents compound into a shared memory, a
 rulebook, and a capability that persist across sessions, people, and models.
-It is a practice, not a product: never finished, always sharpening.
+I call that practice **The Articles of Memory** — not a product but a
+discipline: never finished, always sharpening.
 
 Every sample is stripped of company data, self-contained, and runs offline in a
 couple of minutes. The aim is not perfect code. It is to show how I think

@@ -2,10 +2,16 @@
 
 Institutional intelligence is the idea this portfolio orbits: a governed
 workspace where human judgment and AI agents compound into a shared memory, a
-rulebook, and a capability that persist across sessions, people, and models.
+rulebook, and a capability that persist across sessions, people, and models. I
+have a name for the practice of building one: **The Articles of Memory**. The
+name is deliberate. It is shaped like a founding document, because the law here
+genuinely is version-controlled text that compounds by amendment, and because
+memory is both what the institution holds and what each fresh, forgetful session
+lacks.
 
-I want to be careful about the claim. I did not invent the ingredients, and
-this is not a product I set up once and walked away from. It is a practice I
+I want to be careful about the claim. The name is mine to coin, but the
+ingredients under it are not, and this is not a product I set up once and walked
+away from. It is a practice I
 work at daily, and it is a way of thinking before it is any particular system:
 divergent and combinatorial, always asking which existing ideas belong together
 next, and always asking whether the logic that held yesterday still holds
@@ -24,19 +30,15 @@ The story has four levels, and each answers a different question:
 1. **Institutional intelligence** is what gets built: an institution, not a
    tool. Memory that outlives sessions and people. Rules that govern how work
    is allowed to happen. Verification that makes answers trustworthy. Teaching
-   that onboards newcomers, human or agent. A shared vocabulary that maps
-   scattered data to the business concepts behind it, so people and agents
-   reason from one set of definitions instead of raw keywords. The models
-   inside it are capable and replaceable; the institution is the asset that
-   compounds.The models inside it are capable and replaceable; the institution
-   is the asset that compounds.
-3. **Agentic engineering** is how it gets built: the craft of designing the
+   that onboards newcomers, human or agent. The models inside it are capable
+   and replaceable; the institution is the asset that compounds.
+2. **Agentic engineering** is how it gets built: the craft of designing the
    agents, the memory, the guardrails, and the verification loops as one
    governed system, rather than bolting an AI assistant onto existing work.
-4. **Agentic analytics** is where I practice it today: an analytics workspace
+3. **Agentic analytics** is where I practice it today: an analytics workspace
    over a large production database. The discipline is domain-agnostic; the
    same design would run a finance or operations shop without changing shape.
-5. **The six pillars** are why it can be trusted. Each is a short read in
+4. **The six pillars** are why it can be trusted. Each is a short read in
    [`pillars/`](pillars):
 
 | Pillar | The rule |
@@ -141,8 +143,8 @@ this portfolio as its own project.
 Nothing in the design depends on the current model, the current vendor stack,
 or the analytics domain. The law is version-controlled text. The memory is
 structure plus provenance. The verification is procedure. Swap the engine and
-the institution keeps its knowledge, its standards, and its calibration; pair
-it with people who work the craft, and it keeps compounding. If your team
+The Articles of Memory keeps its knowledge, its standards, and its calibration;
+pair it with people who work the craft, and it keeps compounding. If your team
 already has AI tools and still loses knowledge every time someone leaves, this
 discipline is the missing layer, and it can be built around whatever stack you
 already run. The pattern is open-ended by design: take it, make it your own,

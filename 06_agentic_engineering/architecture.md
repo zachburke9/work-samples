@@ -1,8 +1,8 @@
 # Architecture: How the Institution Fits Together
 
-This is the system view of the workspace described in the README. Everything
-here is generalized; the pattern is what matters, not any one company's
-implementation of it.
+This is the system view of The Articles of Memory, the practice described in the
+README. Everything here is generalized; the pattern is what matters, not any one
+company's implementation of it.
 
 ## The system
 
@@ -65,8 +65,7 @@ mood. See `examples/example_skill.md` and `examples/example_hook.md`.
 search, review, and lineage-hunting; verifier agents exist to say no. The
 important design choice is adversarial: a finding does not count until an
 independent pass has tried to refute it, and a change to anything inherited does
-not ship until it proves parity with the behavior it replaces (same inputs,
-same answers, before it takes over).
+not ship until it proves parity with the behavior it replaces.
 
 **The memory.** Two tiers: a personal source-of-truth tier with full detail, and
 a curated shared mirror published deliberately through a manifest (share the
