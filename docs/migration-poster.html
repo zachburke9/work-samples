@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Parity Gate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16222E; --paper:#FAF9F6; --amber:#D9A441; --amber-soft:#E4B45C;
+  --sans:'Inter','Segoe UI',system-ui,sans-serif; --mono:'JetBrains Mono',Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  width:1600px;height:900px;background:
+    radial-gradient(1200px 600px at 78% 12%, rgba(217,164,65,0.10), transparent 60%),
+    var(--ink);
+  color:#fff;font-family:var(--sans);display:flex;flex-direction:column;justify-content:center;
+  padding:5rem 5.5rem;overflow:hidden;position:relative;
+}
+.kicker{font-family:var(--mono);font-size:1.15rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);}
+h1{font-weight:800;font-size:5.4rem;line-height:1.04;letter-spacing:-0.015em;margin:1.4rem 0 1.8rem;max-width:20ch;}
+h1 .amber{color:var(--amber-soft);}
+.punch{font-size:2rem;font-weight:400;line-height:1.35;color:#D3DBE3;max-width:34ch;border-left:5px solid var(--amber);padding-left:1.5rem;}
+.flow{display:flex;align-items:center;gap:0.9rem;flex-wrap:wrap;margin-top:2.6rem;font-weight:600;font-size:1.35rem;color:#9FB0BE;}
+.flow .step{white-space:nowrap;}
+.flow .step.hot{color:#0f1720;background:var(--amber);padding:0.35rem 1rem;border-radius:999px;font-weight:700;}
+.flow .sep{color:#4E5A66;font-family:var(--mono);}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:2rem;margin-top:3.4rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,0.10);font-size:1.05rem;color:#7C8B99;font-family:var(--mono);letter-spacing:0.02em;}
+.foot .name{color:#B7C2CC;font-weight:500;}
+</style>
+</head>
+<body>
+  <div class="kicker">Platform Migration</div>
+  <h1>Migrating a pipeline <span class="amber">without changing the numbers.</span></h1>
+  <div class="punch">The new version ships only when it produces exactly the same answers as the old
+  one. Proven row by row.</div>
+  <div class="flow">
+    <span class="step">Legacy pipeline</span><span class="sep">&rarr;</span>
+    <span class="step">Owned SQL</span><span class="sep">&rarr;</span>
+    <span class="step hot">Parity gate</span><span class="sep">&rarr;</span>
+    <span class="step">Governed source of truth</span><span class="sep">&rarr;</span>
+    <span class="step">Dashboards</span>
+  </div>
+  <div class="foot"><span class="name">Zach Burke &middot; Analytics Engineer</span><span>Full write-up in the portfolio</span></div>
+</body>
+</html>
