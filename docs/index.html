@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zach Burke: Analytics Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16222E; --ink-700:#223447; --ink-600:#4E5A66; --paper:#FAF9F6; --white:#FFFFFF;
+  --amber:#D9A441; --amber-text:#7E5A15; --amber-deep:#63470F; --amber-100:#F5E9CE;
+  --blueprint:#27567F; --blueprint-wash:#EDF2F7; --grid:rgba(39,86,127,0.09);
+  --link:#1F4E79; --verified:#286046; --warn:#8A4A12;
+  --gray-100:#ECEAE5; --gray-200:#E3E1DC;
+  --sans:'Inter','Segoe UI',system-ui,sans-serif; --serif:'Source Serif 4',Georgia,serif; --mono:'JetBrains Mono',Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.65;}
+.wrap{max-width:1000px;margin:0 auto;padding:0 1.5rem;}
+a{color:var(--link);text-decoration:none;} a:hover{color:var(--amber-text);text-decoration:underline;}
+.kicker{font-family:var(--sans);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);}
+h2{font-family:var(--sans);font-weight:700;font-size:1.75rem;margin-bottom:0.4rem;}
+h2 .k{display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber-deep);margin-bottom:0.3rem;}
+.lead{color:var(--ink-600);font-size:1.1rem;max-width:46rem;}
+section{padding:3.5rem 0;border-top:1px solid var(--gray-200);}
+section:first-of-type{border-top:none;}
+
+/* Hero */
+header{background:
+  linear-gradient(var(--grid) 1px, transparent 1px),
+  linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+  var(--ink);
+  background-size:26px 26px,26px 26px,auto;color:var(--white);padding:4rem 0 3.5rem;border-bottom:3px solid var(--amber);}
+header .kicker{color:var(--amber);}
+header h1{font-family:var(--sans);font-weight:700;font-size:3rem;line-height:1.1;margin:0.5rem 0;}
+header .tag{font-size:1.4rem;color:#DCE3EA;max-width:38rem;}
+header .intro{color:#AEB9C4;margin-top:1.25rem;max-width:44rem;font-size:1.05rem;}
+.chips{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.75rem;}
+.chip{font-family:var(--sans);font-size:0.85rem;font-weight:600;color:var(--ink);background:var(--amber);padding:0.5rem 1rem;border-radius:999px;}
+.chip.ghost{background:transparent;color:var(--white);border:1.5px solid #3a4b5c;}
+.chip:hover{text-decoration:none;filter:brightness(1.05);}
+
+/* Short version strip */
+.short{background:var(--white);border:1px solid var(--gray-200);border-radius:10px;padding:1.5rem 1.75rem;box-shadow:0 2px 8px rgba(22,34,46,0.05);}
+.short p{font-size:1.12rem;}
+.short .em{color:var(--amber-deep);font-weight:600;font-family:var(--sans);}
+
+/* Sample cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.1rem;margin-top:1.75rem;}
+.card{background:var(--white);border:1px solid var(--gray-200);border-radius:10px;padding:1.4rem 1.5rem;box-shadow:0 2px 8px rgba(22,34,46,0.05);display:flex;flex-direction:column;}
+.card .num{font-family:var(--mono);font-size:0.72rem;color:var(--amber-deep);font-weight:600;letter-spacing:0.08em;}
+.card h3{font-family:var(--sans);font-weight:700;font-size:1.2rem;margin:0.15rem 0 0.5rem;}
+.card .hook{font-weight:600;color:var(--ink);margin-bottom:0.5rem;}
+.card .body{color:var(--ink-600);font-size:0.96rem;flex-grow:1;}
+.card .proves{margin-top:0.9rem;padding-top:0.7rem;border-top:1px solid var(--gray-100);font-size:0.85rem;}
+.card .proves b{font-family:var(--sans);color:var(--blueprint);text-transform:uppercase;letter-spacing:0.05em;font-size:0.7rem;}
+.card .go{font-family:var(--sans);font-size:0.85rem;font-weight:600;margin-top:0.6rem;}
+
+/* Matrix */
+table{width:100%;border-collapse:collapse;margin-top:1.5rem;background:var(--white);border:1px solid var(--gray-200);border-radius:10px;overflow:hidden;font-size:0.95rem;}
+th{font-family:var(--sans);text-align:left;background:var(--ink);color:var(--white);padding:0.7rem 1rem;font-size:0.85rem;}
+td{padding:0.7rem 1rem;border-bottom:1px solid var(--gray-100);vertical-align:top;}
+td.area{font-family:var(--sans);font-weight:600;white-space:nowrap;}
+tr:last-child td{border-bottom:none;}
+
+/* Chart */
+.viz{display:grid;grid-template-columns:1.1fr 1fr;gap:1.75rem;align-items:center;margin-top:1.5rem;}
+@media(max-width:760px){.viz{grid-template-columns:1fr;}}
+.viz .card{padding:1.5rem;}
+.chartcap{color:var(--ink-600);font-size:0.9rem;margin-top:0.6rem;font-family:var(--sans);}
+.legend{display:flex;gap:1.2rem;font-family:var(--sans);font-size:0.82rem;margin-top:0.4rem;}
+.legend span{display:inline-flex;align-items:center;gap:0.4rem;}
+.legend i{width:14px;height:3px;border-radius:2px;display:inline-block;}
+
+/* How I work */
+.pillars{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:1.5rem;}
+.pillar{border-left:3px solid var(--amber);padding:0.3rem 0 0.3rem 1rem;}
+.pillar b{font-family:var(--sans);display:block;font-size:0.98rem;}
+.pillar span{color:var(--ink-600);font-size:0.9rem;}
+
+/* Footer */
+footer{background:var(--ink);color:var(--white);padding:3rem 0;text-align:center;}
+footer .kicker{color:var(--amber);}
+footer h2{color:var(--white);}
+footer a{color:var(--amber);}
+footer .contact{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1.25rem;font-family:var(--sans);font-weight:600;}
+.fineprint{color:#8798A6;font-size:0.8rem;margin-top:2rem;font-family:var(--sans);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Analytics Engineer</div>
+    <h1>Zach Burke</h1>
+    <p class="tag">Turning complex data into decisions leaders act on.</p>
+    <p class="intro">I build the pipelines, the governed data, and the AI systems behind the numbers
+    a business runs on.</p>
+    <div class="chips">
+      <a class="chip" href="https://github.com/zachburke9/work-samples">View the code</a>
+      <a class="chip ghost" href="https://www.linkedin.com/in/zjburke">LinkedIn</a>
+      <a class="chip ghost" href="mailto:zachburke23@gmail.com">Email</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section id="short">
+    <div class="short">
+      <p><span class="em">The short version.</span> I take messy, scattered data and turn it into
+      one trustworthy source that leaders can decide on, then I build the automation and AI around it
+      so the work gets faster and more reliable over time instead of more fragile. I care about two
+      things above all: the numbers being right, and being able to prove it.</p>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2><span class="k">The work</span>Six things I build, and why they matter</h2>
+    <p class="lead">Each one is a real, runnable sample, with the code one click away.</p>
+    <div class="cards">
+
+      <div class="card">
+        <div class="num">01 / SQL &amp; ETL</div>
+        <h3>Clean, trustworthy data</h3>
+        <div class="hook">Raw data is messy. Reports are only as good as the data under them.</div>
+        <div class="body">I write the transformations that turn scattered, inconsistent records into
+        tidy tables a report can rely on, and I ship test data so the logic can be checked, not just
+        trusted.</div>
+        <div class="proves"><b>Proves</b><br>The foundation everything else stands on: correct data, provably so.</div>
+        <a class="go" href="https://github.com/zachburke9/work-samples/tree/main/01_sql_etl">See the details &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div class="num">02 / Automation</div>
+        <h3>Catching problems before people do</h3>
+        <div class="hook">A bad number should never quietly reach a decision.</div>
+        <div class="body">Small programs that watch the daily numbers and raise a flag the moment
+        something drifts out of range, so a person hears about it early instead of discovering it in a
+        meeting.</div>
+        <div class="proves"><b>Proves</b><br>Reliability by design: the system watches itself.</div>
+        <a class="go" href="https://github.com/zachburke9/work-samples/tree/main/02_analytics_automation">See the details &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div class="num">03 / Forecasting</div>
+        <h3>Seeing demand before it arrives</h3>
+        <div class="hook">The best decisions happen before the data is in.</div>
+        <div class="body">A model that learns from past patterns to predict what is coming, always
+        shown next to an honest accuracy check so you know exactly how much to trust it.</div>
+        <div class="proves"><b>Proves</b><br>Machine learning used responsibly, with its limits stated out loud.</div>
+        <a class="go" href="https://github.com/zachburke9/work-samples/tree/main/03_ml_forecasting">See the details &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div class="num">04 / Mentorship</div>
+        <h3>Bringing analysts up to speed</h3>
+        <div class="hook">Knowledge should be taught, not guessed at.</div>
+        <div class="body">The tested toolkit and graded exercises I use to onboard a junior analyst,
+        so a new person becomes productive from a real curriculum instead of tribal knowledge.</div>
+        <div class="proves"><b>Proves</b><br>I build people and teams, not just pipelines.</div>
+        <a class="go" href="https://github.com/zachburke9/work-samples/tree/main/04_mentorship">See the details &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div class="num">05 / Migration</div>
+        <h3>Moving off fragile tools, safely</h3>
+        <div class="hook">Replacing critical reporting without changing a single number.</div>
+        <div class="body">Rebuilding business-critical work off brittle, one-person tools onto owned,
+        governed systems, and proving row by row that the answers never moved. See the diagram below.</div>
+        <div class="proves"><b>Proves</b><br>Senior judgment: change everything underneath, break nothing on top.</div>
+        <a class="go" href="https://github.com/zachburke9/work-samples/tree/main/05_platform_migration">See the details &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div class="num">06 / Agentic engineering</div>
+        <h3>AI that remembers and checks itself</h3>
+        <div class="hook">Institutional intelligence: knowledge that compounds instead of walking out the door.</div>
+        <div class="body">Designing AI systems with lasting memory, written rules, and self-verification,
+        so an organization gets smarter with every project instead of relearning the same things.</div>
+        <div class="proves"><b>Proves</b><br>The frontier: building the governed system, not just using an assistant.</div>
+        <a class="go" href="https://github.com/zachburke9/work-samples/tree/main/06_agentic_engineering">See the details &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="forecast">
+    <h2><span class="k">A look inside</span>Prediction, with an honest accuracy check</h2>
+    <div class="viz">
+      <div class="card">
+        <svg viewBox="0 0 480 260" width="100%" role="img" aria-label="Line chart of actual versus predicted daily bookings">
+          <rect x="0" y="0" width="480" height="260" fill="#FFFFFF"/>
+          <!-- gridlines -->
+          <g stroke="#ECEAE5" stroke-width="1">
+            <line x1="46" y1="30" x2="462" y2="30"/>
+            <line x1="46" y1="80" x2="462" y2="80"/>
+            <line x1="46" y1="130" x2="462" y2="130"/>
+            <line x1="46" y1="180" x2="462" y2="180"/>
+            <line x1="46" y1="210" x2="462" y2="210"/>
+          </g>
+          <!-- axes -->
+          <line x1="46" y1="30" x2="46" y2="210" stroke="#4E5A66" stroke-width="1.5"/>
+          <line x1="46" y1="210" x2="462" y2="210" stroke="#4E5A66" stroke-width="1.5"/>
+          <!-- actual (ink) -->
+          <polyline fill="none" stroke="#16222E" stroke-width="2.5"
+            points="46,168 82,150 118,158 154,120 190,132 226,96 262,108 298,74 334,88 370,60 406,72 442,50"/>
+          <!-- predicted (amber) dashed -->
+          <polyline fill="none" stroke="#D9A441" stroke-width="2.5" stroke-dasharray="6 4"
+            points="46,160 82,156 118,150 154,128 190,126 226,104 262,100 298,82 334,80 370,66 406,64 442,56"/>
+          <!-- y labels -->
+          <g font-family="'JetBrains Mono',monospace" font-size="10" fill="#4E5A66">
+            <text x="40" y="34" text-anchor="end">high</text>
+            <text x="40" y="214" text-anchor="end">low</text>
+          </g>
+          <text x="254" y="238" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#4E5A66">time &rarr;</text>
+        </svg>
+        <div class="legend">
+          <span><i style="background:#16222E"></i>Actual</span>
+          <span><i style="background:#D9A441"></i>Predicted</span>
+        </div>
+        <div class="chartcap">Representative example, synthetic data. The model tracks the real trend
+        closely, and the sample always reports how far off it is, never just the prediction.</div>
+      </div>
+      <div>
+        <p class="lead">A forecast is only useful if you know how much to trust it. Every model I
+        ship carries its own report card: how close it came, where it struggled, and a plain baseline
+        to beat. A confident wrong number is worse than an honest uncertain one.</p>
+        <p style="margin-top:1rem;"><a href="https://github.com/zachburke9/work-samples/tree/main/03_ml_forecasting">See how the model is built and checked &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="migration">
+    <h2><span class="k">The signature move</span>Migrating a pipeline without changing the numbers</h2>
+    <p class="lead">The most valuable and most dangerous work is replacing something a business already
+    depends on. The discipline that makes it safe is the parity gate: the new version does not ship
+    until it produces exactly the same answers as the old one.</p>
+    <p style="margin-top:1rem;"><a href="migration-diagram.html">Open the full diagram &rarr;</a> &nbsp;|&nbsp;
+      <a href="https://github.com/zachburke9/work-samples/tree/main/05_platform_migration">Read the written case study &rarr;</a></p>
+  </section>
+
+  <section id="matrix">
+    <h2><span class="k">At a glance</span>What each area proves</h2>
+    <table>
+      <tr><th>Area</th><th>In one line</th><th>What it shows</th></tr>
+      <tr><td class="area">SQL &amp; ETL</td><td>Clean, tested, trustworthy data</td><td>Correctness first</td></tr>
+      <tr><td class="area">Automation</td><td>The system watches its own numbers</td><td>Reliability by design</td></tr>
+      <tr><td class="area">Forecasting</td><td>Prediction with an honest accuracy check</td><td>Responsible machine learning</td></tr>
+      <tr><td class="area">Mentorship</td><td>A real curriculum for new analysts</td><td>Building people, not just pipelines</td></tr>
+      <tr><td class="area">Migration</td><td>Replace the tool, prove nothing moved</td><td>Senior judgment under risk</td></tr>
+      <tr><td class="area">Agentic engineering</td><td>AI that remembers and checks itself</td><td>Systems that compound</td></tr>
+    </table>
+  </section>
+
+  <section id="howiwork">
+    <h2><span class="k">How I work</span>An analytics team of one, amplified by AI</h2>
+    <p class="lead">I operate an AI-augmented workspace: language-model agents held to written rules, a
+    lasting memory, and verification loops, so I deliver at team scale while the work stays governed
+    and auditable. Four principles run through everything.</p>
+    <div class="pillars">
+      <div class="pillar"><b>Correctness first</b><span>then speed, then polish. In that order.</span></div>
+      <div class="pillar"><b>Prove it, do not assert it</b><span>a claim is checked against live data before it ships.</span></div>
+      <div class="pillar"><b>Own what you rely on</b><span>governed source-of-truth data, not fragile black boxes.</span></div>
+      <div class="pillar"><b>Knowledge should compound</b><span>every project leaves the next one easier.</span></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="kicker">Let's talk</div>
+    <h2>Analytics that a team can trust and maintain</h2>
+    <div class="contact">
+      <a href="https://github.com/zachburke9/work-samples">GitHub</a>
+      <a href="https://www.linkedin.com/in/zjburke">LinkedIn</a>
+      <a href="mailto:zachburke23@gmail.com">zachburke23@gmail.com</a>
+    </div>
+    <div class="fineprint">Every project is stripped of company data and runs on its own. Built and
+    designed by Zach Burke in the Ink and Amber personal design system.</div>
+  </div>
+</footer>
+
+</body>
+</html>

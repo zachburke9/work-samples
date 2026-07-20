@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Ink and Amber: Zach Burke personal design tokens
+   Single source of truth for color, type, space, radius, elevation.
+   Personal brand system. Independent of any employer brand: no shared hex
+   values with any company palette (verified at authoring time).
+
+   Two tiers:
+     1. PRIMITIVE tokens  (--zb-*)        raw brand values. Do not change.
+     2. SEMANTIC tokens   (--zb-color-*)  role-based aliases mapped ONLY onto
+                                          WCAG-AA-safe pairings. Use these.
+
+   WCAG note: every text pairing below is annotated with its MEASURED
+   contrast ratio (WCAG 2.x relative-luminance formula, computed, not
+   estimated). Amber is large-text / UI / dark-surface only; use
+   --zb-amber-text or --zb-amber-deep for amber text that must pass AA
+   on light backgrounds.
+   Version 1.0.0  (2026-07-19)
+   ========================================================================== */
+
+:root {
+  /* ----- PRIMITIVE: core palette ----------------------------------------- */
+  --zb-ink:        #16222E;  /* primary ink + dark surface. 16.12:1 on white (AAA). */
+  --zb-ink-700:    #223447;  /* hover/active on ink surfaces.                       */
+  --zb-ink-600:    #4E5A66;  /* muted text. 7.05:1 white (AAA), 6.70:1 paper (AA).  */
+  --zb-paper:      #FAF9F6;  /* warm page background.                               */
+  --zb-white:      #FFFFFF;  /* cards, sheets.                                      */
+
+  --zb-amber:      #D9A441;  /* signature accent. 2.25:1 on white = LARGE/UI ONLY.
+                                On ink it is text-safe: 7.17:1 (AAA). Shines dark.  */
+  --zb-amber-text: #7E5A15;  /* amber TEXT on light. 6.25:1 white, 5.94:1 paper (AA). */
+  --zb-amber-deep: #63470F;  /* AAA amber text. 8.61:1 white, 8.18:1 paper.          */
+  --zb-amber-100:  #F5E9CE;  /* faint amber wash: highlighted rows, callouts.        */
+
+  /* ----- PRIMITIVE: blueprint garnish (the cartography motif) ------------ *
+   * For special pieces only (grid backdrops, annotation callouts, stamps).
+   * Not a second brand color; use sparingly.                                */
+  --zb-blueprint:      #27567F;  /* 7.71:1 on white (AAA); white on it 7.71:1 (AAA). */
+  --zb-blueprint-grid: rgba(39, 86, 127, 0.10);  /* fine grid lines.                */
+  --zb-blueprint-wash: #EDF2F7;  /* faint blueprint panel tint.                     */
+
+  /* ----- PRIMITIVE: functional colors ------------------------------------ */
+  --zb-link:      #1F4E79;  /* links. 8.66:1 on white (AAA).                        */
+  --zb-verified:  #286046;  /* verified/success text. 7.36:1 on white (AAA).        */
+  --zb-warn:      #8A4A12;  /* caution text. 6.84:1 on white (AA).                  */
+
+  /* ----- PRIMITIVE: warm neutral ramp (borders, tints; not for body text) - */
+  --zb-gray-50:   #F5F3EF;
+  --zb-gray-100:  #ECEAE5;
+  --zb-gray-200:  #E3E1DC;
+  --zb-gray-300:  #D5D2CB;
+
+  /* ----- PRIMITIVE: typography ------------------------------------------- *
+   * Free, OFL-licensed faces so the system renders anywhere with no
+   * license exposure. Feel: technical editorial.                            */
+  --zb-font-sans:  'Inter', 'Source Sans 3', 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --zb-font-serif: 'Source Serif 4', 'Iowan Old Style', Georgia, Cambria, 'Times New Roman', serif;
+  --zb-font-mono:  'JetBrains Mono', 'Cascadia Code', 'SF Mono', Consolas, ui-monospace, monospace;
+
+  /* Type scale: 16px base, 1.250 (major third). */
+  --zb-text-xs:   0.75rem;   /* 12px  fine print, annotations                */
+  --zb-text-sm:   0.875rem;  /* 14px  captions, dense cells                  */
+  --zb-text-base: 1rem;      /* 16px  body                                   */
+  --zb-text-lg:   1.25rem;   /* 20px  lead-in                                */
+  --zb-text-xl:   1.5625rem; /* 25px  h3                                     */
+  --zb-text-2xl:  1.953rem;  /* 31px  h2                                     */
+  --zb-text-3xl:  2.441rem;  /* 39px  h1                                     */
+  --zb-text-4xl:  3.052rem;  /* 49px  display                                */
+
+  --zb-weight-regular: 400;
+  --zb-weight-medium:  600;
+  --zb-weight-bold:    700;
+  --zb-leading-tight:  1.2;
+  --zb-leading-normal: 1.6;
+  --zb-tracking-wide:  0.08em;  /* spaced caps for kickers and stamps        */
+
+  /* ----- PRIMITIVE: spacing (4px base) ------------------------------------ */
+  --zb-space-1:  0.25rem;
+  --zb-space-2:  0.5rem;
+  --zb-space-3:  0.75rem;
+  --zb-space-4:  1rem;
+  --zb-space-6:  1.5rem;
+  --zb-space-8:  2rem;
+  --zb-space-12: 3rem;
+  --zb-space-16: 4rem;
+
+  /* ----- PRIMITIVE: radius + elevation (restrained, editorial) ------------ */
+  --zb-radius-sm: 2px;
+  --zb-radius:    4px;
+  --zb-radius-lg: 8px;
+  --zb-shadow-sm: 0 1px 2px rgba(22, 34, 46, 0.08);
+  --zb-shadow:    0 2px 8px rgba(22, 34, 46, 0.10);
+  --zb-shadow-lg: 0 8px 28px rgba(22, 34, 46, 0.14);
+  --zb-border-w:  1px;
+
+  /* ====================================================================== *
+   * SEMANTIC tokens: role aliases. Use THESE in components.
+   * Each maps onto a measured AA-safe pairing for its intended surface.
+   * ====================================================================== */
+  --zb-color-text:          var(--zb-ink);        /* body/headings on light      */
+  --zb-color-text-muted:    var(--zb-ink-600);    /* AA on white and paper       */
+  --zb-color-text-inverse:  var(--zb-white);      /* text on ink                 */
+
+  --zb-color-bg:            var(--zb-paper);      /* page background             */
+  --zb-color-surface:       var(--zb-white);      /* cards, sheets               */
+  --zb-color-surface-dark:  var(--zb-ink);        /* dark headers, footers       */
+
+  --zb-color-accent:        var(--zb-amber);      /* fills, rules, icons, large  */
+  --zb-color-accent-text:   var(--zb-amber-text); /* amber text passing AA light */
+  --zb-color-accent-on-dark:var(--zb-amber);      /* amber text on ink (AAA)     */
+
+  --zb-color-border:        var(--zb-gray-200);
+  --zb-color-border-strong: var(--zb-ink);
+  --zb-color-rule:          var(--zb-amber);      /* the signature amber hairline */
+
+  --zb-color-link:          var(--zb-link);
+  --zb-color-link-hover:    var(--zb-amber-text);
+
+  /* Confidence badges (the calibrated-answers motif) */
+  --zb-color-verified:      var(--zb-verified);
+  --zb-color-derived:       var(--zb-blueprint);
+  --zb-color-guess:         var(--zb-warn);
+  --zb-color-unknown:       var(--zb-ink-600);
+}
