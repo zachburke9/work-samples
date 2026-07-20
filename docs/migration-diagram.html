@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Parity Gate: migrating a pipeline without changing the numbers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16222E; --ink-700:#223447; --ink-600:#4E5A66; --paper:#FAF9F6; --white:#FFFFFF;
+  --amber:#D9A441; --amber-text:#7E5A15; --amber-deep:#63470F; --amber-100:#F5E9CE;
+  --blueprint:#27567F; --blueprint-wash:#EDF2F7; --grid:rgba(39,86,127,0.10);
+  --link:#1F4E79; --verified:#286046; --warn:#8A4A12;
+  --gray-100:#ECEAE5; --gray-200:#E3E1DC;
+  --sans:'Inter','Segoe UI',system-ui,sans-serif; --serif:'Source Serif 4',Georgia,serif; --mono:'JetBrains Mono',Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.6;padding:2.5rem 1.25rem 3rem;}
+.wrap{max-width:860px;margin:0 auto;}
+.kicker{font-family:var(--sans);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber-deep);}
+h1{font-family:var(--sans);font-weight:700;font-size:1.95rem;line-height:1.2;margin:0.4rem 0 0.5rem;}
+.sub{color:var(--ink-600);font-size:1.05rem;max-width:44rem;margin-bottom:2rem;}
+.flow{display:flex;flex-direction:column;gap:0;}
+.stage{background:var(--white);border:1px solid var(--gray-200);border-radius:8px;padding:1.1rem 1.3rem;box-shadow:0 2px 8px rgba(22,34,46,0.06);}
+.stage .st-name{font-family:var(--sans);font-weight:700;font-size:1.05rem;}
+.stage .st-desc{color:var(--ink-600);font-size:0.95rem;margin-top:0.2rem;}
+.stage .st-num{font-family:var(--mono);font-size:0.72rem;color:var(--ink-600);letter-spacing:0.05em;}
+.stage.legacy{background:var(--ink);color:var(--white);border-color:var(--ink);}
+.stage.legacy .st-desc{color:#C9D2DB;}
+.stage.legacy .st-num{color:var(--amber);}
+.gate{border:2px solid var(--amber);background:var(--amber-100);position:relative;}
+.gate .st-name{color:var(--amber-deep);}
+.gate .st-desc{color:#5f4a1e;}
+.arrow{width:2px;height:26px;background:var(--ink-600);margin:0 auto;position:relative;}
+.arrow::after{content:"";position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid var(--ink-600);}
+.badge{display:inline-flex;align-items:center;gap:0.35rem;font-family:var(--sans);font-weight:600;font-size:0.72rem;letter-spacing:0.04em;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:999px;border:1.5px solid var(--verified);color:var(--verified);background:var(--white);margin-top:0.6rem;}
+.badge.dot::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--verified);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-top:0.7rem;}
+@media(max-width:560px){.two-col{grid-template-columns:1fr;}}
+.mini{border:1px solid var(--gray-200);border-radius:6px;padding:0.6rem 0.8rem;background:var(--white);font-size:0.85rem;}
+.mini b{font-family:var(--sans);display:block;font-size:0.8rem;}
+.mini span{color:var(--ink-600);}
+.railwrap{position:relative;}
+.qgate{border-left:4px solid var(--amber);background:var(--blueprint-wash);border-radius:0 6px 6px 0;padding:0.7rem 1rem;margin:0.6rem 0 0;font-size:0.9rem;}
+.qgate b{font-family:var(--sans);color:var(--blueprint);}
+.foot{margin-top:2.2rem;padding-top:1rem;border-top:1px solid var(--gray-200);color:var(--ink-600);font-size:0.82rem;font-family:var(--sans);}
+.stamp{font-family:var(--mono);font-size:0.7rem;color:var(--blueprint);letter-spacing:0.06em;text-transform:uppercase;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Platform Migration</div>
+  <h1>From a fragile legacy pipeline to a governed source of truth</h1>
+  <p class="sub">The pattern, generalized. Rebuild business-critical reporting off legacy tools or code
+  onto owned, version-controlled SQL, and prove, row by row, that not a single number moved.</p>
+
+  <div class="flow">
+    <div class="stage legacy">
+      <div class="st-num">START</div>
+      <div class="st-name">A legacy transformation</div>
+      <div class="st-desc">Whatever turns raw data into a report today: a visual ETL tool, a pile of scripts, a stored procedure, or a hand-run workflow. Usually only one person fully understands it, undocumented and easy to break.</div>
+    </div>
+    <div class="arrow"></div>
+
+    <div class="stage">
+      <div class="st-num">STEP 1</div>
+      <div class="st-name">Reverse-engineer, then rebuild as owned SQL</div>
+      <div class="st-desc">Write down what the old workflow actually does, not what everyone assumes, then re-express it as plain, version-controlled SQL anyone can read, review, and search.</div>
+    </div>
+    <div class="arrow"></div>
+
+    <div class="stage gate">
+      <div class="st-num">THE GATE</div>
+      <div class="st-name">Parity gate</div>
+      <div class="st-desc">Old and new run side by side. The new version does not ship until it produces exactly the same answers as the old one, or every remaining difference is explained and approved by the owner.</div>
+      <span class="badge dot">0 unexplained differences</span>
+    </div>
+    <div class="arrow"></div>
+
+    <div class="stage">
+      <div class="st-num">STEP 2</div>
+      <div class="st-name">Governed source-of-truth table</div>
+      <div class="st-desc">One owned table replaces the black box, with a single, documented definition for every metric it carries.</div>
+      <div class="two-col">
+        <div class="mini"><b>One home per fact</b><span>no more competing versions of the same number</span></div>
+        <div class="mini"><b>Defined metrics</b><span>every column means one agreed thing</span></div>
+      </div>
+    </div>
+
+    <div class="qgate">
+      <span class="stamp">Guard on every change</span><br>
+      <b>Two-layer quality gate.</b> A local check runs before each change is saved, and the same
+      check runs again in the automated build. A wrong column name or a broken key cannot reach the table.
+    </div>
+    <div class="arrow"></div>
+
+    <div class="stage">
+      <div class="st-num">DELIVERED</div>
+      <div class="st-name">Dashboards and executive reports</div>
+      <div class="st-desc">The same trusted numbers flow to the people making decisions, now on a foundation the team owns and can prove.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    Generalized reference pattern. No proprietary data, systems, or figures. Read the written version:
+    "The Parity Gate," in the portfolio.
+  </div>
+</div>
+</body>
+</html>

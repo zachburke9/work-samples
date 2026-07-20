@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ink and Amber: the personal design system, on one page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --zb-ink:#16222E; --zb-ink-700:#223447; --zb-ink-600:#4E5A66;
+  --zb-paper:#FAF9F6; --zb-white:#FFFFFF;
+  --zb-amber:#D9A441; --zb-amber-text:#7E5A15; --zb-amber-deep:#63470F; --zb-amber-100:#F5E9CE;
+  --zb-blueprint:#27567F; --zb-blueprint-grid:rgba(39,86,127,0.10); --zb-blueprint-wash:#EDF2F7;
+  --zb-link:#1F4E79; --zb-verified:#286046; --zb-warn:#8A4A12;
+  --zb-gray-50:#F5F3EF; --zb-gray-100:#ECEAE5; --zb-gray-200:#E3E1DC; --zb-gray-300:#D5D2CB;
+  --zb-font-sans:'Inter','Source Sans 3','Segoe UI',Roboto,-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  --zb-font-serif:'Source Serif 4','Iowan Old Style',Georgia,Cambria,'Times New Roman',serif;
+  --zb-font-mono:'JetBrains Mono','Cascadia Code','SF Mono',Consolas,ui-monospace,monospace;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--zb-paper); color:var(--zb-ink); font-family:var(--zb-font-serif); line-height:1.6; }
+.wrap { max-width:920px; margin:0 auto; padding:0 1.5rem 4rem; }
+
+/* Header */
+header { background:var(--zb-ink); color:var(--zb-white); padding:3rem 0 2.5rem; border-bottom:3px solid var(--zb-amber); }
+header .wrap { padding-bottom:0; }
+.kicker { font-family:var(--zb-font-sans); font-size:0.75rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--zb-amber); }
+header h1 { font-family:var(--zb-font-sans); font-weight:700; font-size:2.441rem; line-height:1.2; margin:0.5rem 0 0.75rem; }
+header p { color:#C9D2DB; font-size:1.05rem; max-width:44rem; }
+
+h2 { font-family:var(--zb-font-sans); font-weight:700; font-size:1.5625rem; margin:3rem 0 0.5rem; }
+h2::after { content:""; display:block; width:3rem; height:3px; background:var(--zb-amber); margin-top:0.5rem; }
+.note { color:var(--zb-ink-600); font-size:0.9rem; margin-bottom:1.25rem; }
+
+/* Swatches */
+.swatches { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:0.75rem; margin-top:1.25rem; }
+.sw { border:1px solid var(--zb-gray-200); border-radius:4px; overflow:hidden; background:var(--zb-white); }
+.sw .chip { height:64px; }
+.sw .meta { padding:0.5rem 0.65rem; font-family:var(--zb-font-mono); font-size:0.72rem; line-height:1.5; }
+.sw .meta b { display:block; font-family:var(--zb-font-sans); font-size:0.8rem; }
+.sw .meta span { color:var(--zb-ink-600); }
+
+/* Type samples */
+.type-sample { background:var(--zb-white); border:1px solid var(--zb-gray-200); border-radius:8px; padding:1.5rem 1.75rem; margin-top:1.25rem; }
+.type-sample .t-display { font-family:var(--zb-font-sans); font-weight:700; font-size:2.441rem; line-height:1.2; }
+.type-sample .t-lead { font-size:1.25rem; color:var(--zb-ink-600); margin-top:0.5rem; }
+.type-sample .t-body { margin-top:1rem; max-width:40rem; }
+.type-sample .t-mono { font-family:var(--zb-font-mono); font-size:0.875rem; margin-top:1rem; background:var(--zb-gray-50); border:1px solid var(--zb-gray-200); border-radius:4px; padding:0.6rem 0.8rem; display:inline-block; }
+a { color:var(--zb-link); }
+a:hover { color:var(--zb-amber-text); }
+
+/* Confidence badges */
+.badges { display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.25rem; }
+.badge { font-family:var(--zb-font-sans); font-weight:600; font-size:0.78rem; letter-spacing:0.06em; text-transform:uppercase; padding:0.3rem 0.7rem; border-radius:999px; border:1.5px solid; background:var(--zb-white); }
+.badge.verified { color:var(--zb-verified); border-color:var(--zb-verified); }
+.badge.derived  { color:var(--zb-blueprint); border-color:var(--zb-blueprint); }
+.badge.guess    { color:var(--zb-warn); border-color:var(--zb-warn); }
+.badge.unknown  { color:var(--zb-ink-600); border-color:var(--zb-ink-600); }
+
+/* Ladder */
+.ladder { margin-top:1.25rem; border:1px solid var(--zb-gray-200); border-radius:8px; overflow:hidden; }
+.rung { display:flex; align-items:baseline; gap:1rem; padding:0.85rem 1.1rem; background:var(--zb-white); border-top:1px solid var(--zb-gray-100); }
+.rung:first-child { border-top:none; }
+.rung .lvl { font-family:var(--zb-font-mono); font-weight:600; font-size:0.85rem; color:var(--zb-ink-600); min-width:2.2rem; }
+.rung .name { font-family:var(--zb-font-sans); font-weight:600; min-width:9rem; }
+.rung .desc { color:var(--zb-ink-600); font-size:0.95rem; }
+.rung.here { background:var(--zb-amber-100); border-left:4px solid var(--zb-amber); }
+.rung.here .tag { font-family:var(--zb-font-sans); font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--zb-amber-deep); margin-left:auto; white-space:nowrap; }
+
+/* Blueprint garnish */
+.blueprint { margin-top:1.25rem; background:
+  linear-gradient(var(--zb-blueprint-grid) 1px, transparent 1px),
+  linear-gradient(90deg, var(--zb-blueprint-grid) 1px, transparent 1px),
+  var(--zb-blueprint-wash);
+  background-size:24px 24px, 24px 24px, auto;
+  border:1px solid var(--zb-gray-200); border-radius:8px; padding:1.75rem; }
+.annotation { background:var(--zb-white); border-left:4px solid var(--zb-blueprint); box-shadow:0 2px 8px rgba(22,34,46,0.10); border-radius:4px; padding:1rem 1.25rem; max-width:34rem; }
+.annotation .stamp { font-family:var(--zb-font-mono); font-size:0.7rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--zb-blueprint); }
+.annotation p { margin-top:0.35rem; font-size:0.95rem; }
+
+/* Dark panel */
+.dark-panel { margin-top:1.25rem; background:var(--zb-ink); color:var(--zb-white); border-radius:8px; padding:1.75rem; }
+.dark-panel .kicker { margin-bottom:0.4rem; }
+.dark-panel h3 { font-family:var(--zb-font-sans); font-size:1.25rem; }
+.dark-panel p { color:#C9D2DB; margin-top:0.5rem; max-width:40rem; }
+
+/* Rules table */
+table { width:100%; border-collapse:collapse; margin-top:1.25rem; background:var(--zb-white); border:1px solid var(--zb-gray-200); border-radius:8px; overflow:hidden; font-size:0.92rem; }
+th { font-family:var(--zb-font-sans); text-align:left; background:var(--zb-gray-50); padding:0.6rem 0.9rem; border-bottom:2px solid var(--zb-gray-200); }
+td { padding:0.6rem 0.9rem; border-bottom:1px solid var(--zb-gray-100); vertical-align:top; }
+td.mono { font-family:var(--zb-font-mono); font-size:0.8rem; white-space:nowrap; }
+footer { margin-top:3.5rem; color:var(--zb-ink-600); font-size:0.85rem; border-top:1px solid var(--zb-gray-200); padding-top:1rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Zach Burke: personal design system</div>
+    <h1>Ink and Amber</h1>
+    <p>Technical editorial. A deep slate ink, one warm amber accent, warm paper, and a blueprint
+    motif held in reserve for the cartography moments. Every text pairing is annotated with a
+    measured WCAG contrast ratio: the same discipline as the data work.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h2>Palette</h2>
+  <p class="note">Primitive tokens. Ratios are measured, not estimated. Amber is large-text and UI only on light backgrounds; it is AAA text on ink.</p>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#16222E"></div><div class="meta"><b>Ink</b>#16222E<br><span>16.12:1 on white (AAA)</span></div></div>
+    <div class="sw"><div class="chip" style="background:#4E5A66"></div><div class="meta"><b>Ink 600 (muted)</b>#4E5A66<br><span>7.05:1 white, 6.70:1 paper</span></div></div>
+    <div class="sw"><div class="chip" style="background:#FAF9F6; border-bottom:1px solid #E3E1DC"></div><div class="meta"><b>Paper</b>#FAF9F6<br><span>page background</span></div></div>
+    <div class="sw"><div class="chip" style="background:#D9A441"></div><div class="meta"><b>Amber</b>#D9A441<br><span>2.25:1 white = LARGE/UI. 7.17:1 on ink (AAA)</span></div></div>
+    <div class="sw"><div class="chip" style="background:#7E5A15"></div><div class="meta"><b>Amber text</b>#7E5A15<br><span>6.25:1 white (AA)</span></div></div>
+    <div class="sw"><div class="chip" style="background:#63470F"></div><div class="meta"><b>Amber deep</b>#63470F<br><span>8.61:1 white (AAA)</span></div></div>
+    <div class="sw"><div class="chip" style="background:#27567F"></div><div class="meta"><b>Blueprint</b>#27567F<br><span>7.71:1 white (AAA)</span></div></div>
+    <div class="sw"><div class="chip" style="background:#1F4E79"></div><div class="meta"><b>Link</b>#1F4E79<br><span>8.66:1 white (AAA)</span></div></div>
+    <div class="sw"><div class="chip" style="background:#286046"></div><div class="meta"><b>Verified</b>#286046<br><span>7.36:1 white (AAA)</span></div></div>
+    <div class="sw"><div class="chip" style="background:#8A4A12"></div><div class="meta"><b>Warn</b>#8A4A12<br><span>6.84:1 white (AA)</span></div></div>
+  </div>
+
+  <h2>Type</h2>
+  <p class="note">Inter for headings and UI, Source Serif 4 for long-form body, JetBrains Mono for the engineering texture. 16px base, major-third scale.</p>
+  <div class="type-sample">
+    <div class="t-display">Can a system trust its own memory?</div>
+    <div class="t-lead">The lead-in sets the question in one warm, plain sentence.</div>
+    <p class="t-body">Body text runs in a readable serif at a comfortable measure. Claims point at
+    checkable things, the confidence label comes before the answer, and a
+    <a href="#">link looks like this</a>.</p>
+    <div class="t-mono">RESULT: 4 of 4 verified. n below threshold; keep counting.</div>
+  </div>
+
+  <h2>Confidence badges</h2>
+  <p class="note">The calibrated-answers motif: the label walks in before the answer.</p>
+  <div class="badges">
+    <span class="badge verified">Verified</span>
+    <span class="badge derived">Derived</span>
+    <span class="badge guess">Educated guess</span>
+    <span class="badge unknown">Unknown</span>
+  </div>
+
+  <h2>The ladder</h2>
+  <p class="note">Self-placement below the top rung is the house move. The amber row marks where we honestly stand.</p>
+  <div class="ladder">
+    <div class="rung"><span class="lvl">L5</span><span class="name">The Scientist</span><span class="desc">Grades its own report cards and tunes its rules from the results.</span></div>
+    <div class="rung here"><span class="lvl">L4</span><span class="name">The Governor</span><span class="desc">The knowing changes behavior automatically.</span><span class="tag">We are here</span></div>
+    <div class="rung"><span class="lvl">L3</span><span class="name">The Auditor</span><span class="desc">Knows what it knows, and says "I am not sure" out loud.</span></div>
+    <div class="rung"><span class="lvl">L2</span><span class="name">The Librarian</span><span class="desc">An index, cross-references, and someone who dusts.</span></div>
+  </div>
+
+  <h2>Blueprint garnish</h2>
+  <p class="note">Reserved for the cartography moments: fine grid, annotation callouts, mono stamps. A motif, not a second brand.</p>
+  <div class="blueprint">
+    <div class="annotation">
+      <div class="stamp">Surveyor's note</div>
+      <p>The map compounds; the cartographers rotate. Each session inherits the chart, corrects it
+      against the live terrain, and files it better than it found it.</p>
+    </div>
+  </div>
+
+  <h2>Dark surface</h2>
+  <p class="note">Ink panels carry the amber accent at AAA. Use for headers, verdict blocks, and closing marks.</p>
+  <div class="dark-panel">
+    <div class="kicker">The one-line verdict</div>
+    <h3>A self-governing memory, one rung short of a self-measuring one.</h3>
+    <p>And the measuring instrument is now installed and taking its first readings.</p>
+  </div>
+
+  <h2>Rules of use</h2>
+  <table>
+    <tr><th>Rule</th><th>Token</th><th>Why</th></tr>
+    <tr><td>Body and headings on light surfaces use ink.</td><td class="mono">--zb-color-text</td><td>16.12:1, AAA everywhere.</td></tr>
+    <tr><td>Amber is never small text on white or paper.</td><td class="mono">--zb-color-accent</td><td>2.25:1 fails AA; use it for rules, fills, large display, or on ink.</td></tr>
+    <tr><td>Amber text on light uses the AA-safe alias.</td><td class="mono">--zb-color-accent-text</td><td>6.25:1 measured.</td></tr>
+    <tr><td>Blueprint is a garnish, not a second accent.</td><td class="mono">--zb-blueprint</td><td>Grid, stamps, and annotations only; one motif per piece.</td></tr>
+    <tr><td>Semantic tokens in components, never raw hex.</td><td class="mono">--zb-color-*</td><td>The pairing guarantees live in the alias layer.</td></tr>
+  </table>
+
+  <footer>
+    Ink and Amber v1.0.0, 2026-07-19. Two-tier tokens (primitive then semantic), measured AA annotations.
+    Independent palette: no shared hex values with any employer brand.
+  </footer>
+</div>
+</body>
+</html>
